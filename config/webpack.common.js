@@ -13,7 +13,7 @@ module.exports = {
         rules: [{
             test: /\.jsx?$/,
             exclude: /node_modules/,
-            use: ['babel-loader']
+            use: ['babel-loader', 'eslint-loader']
         }, {
             test: /\.s?css$/,
             use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
@@ -31,7 +31,8 @@ module.exports = {
             inject: false,
             template: require('html-webpack-template'), // eslint-disable-line
             title: 'Utube',
-            appMountId: 'app'
+            appMountId: 'app',
+            headHtmlSnippet: '<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">'
         }),
         new CleanWebpackPlugin(['dist'], { root: rootFolder }),
         new Webpack.HashedModuleIdsPlugin(),

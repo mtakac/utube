@@ -1,0 +1,10 @@
+@import "../../styles/custom";
+
+.icon-button {
+    width: $input-height;
+    height: $input-height;
+
+    svg {
+        fill: $white;
+    }
+}

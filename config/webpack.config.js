@@ -1,5 +1,9 @@
 module.exports = function(env) {
-    const tempEnv = (!env || env === 'development') ? 'dev' : env;
+    let tempEnv = (!env || env === 'development') ? 'dev' : env;
+
+    if (tempEnv === 'production') {
+        tempEnv = 'prod';
+    }
 
     return require(`./webpack.${tempEnv}.js`); // eslint-disable-line global-require, import/no-dynamic-require
 };
