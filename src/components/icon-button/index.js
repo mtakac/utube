@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './icon-button.scss';
+import './styles.scss';
 
 /**
  * Renders button with SVG icon.

@@ -1,12 +1,29 @@
 ### TopBar example
 
 ```js
-    const handleSearch = (e) => {
-        e.preventDefault();
-        alert('Callback passed!');
-    };
+    const { store } = require('../../store');
+    const { Provider } = require('react-redux');
 
-    <section>
-        <TopBar handleSearch={handleSearch} />
-    </section>
+    const handleSearch = () => alert('Search callback passed!');
+    const handleLogin = () => { };
+    const handleLogout = () => alert('Logout callback passed!');
+
+    <Provider store={store}>
+        <section>
+            <h6>For logged out user</h6>
+            <TopBar
+                handleSearch={handleSearch}
+                handleLogin={handleLogin}
+                handleLogout={handleLogout}
+            />
+
+            <h6 className="mt-4">For logged in user</h6>
+            <TopBar
+                handleSearch={handleSearch}
+                handleLogin={handleLogin}
+                handleLogout={handleLogout}
+                isLoggedIn
+            />
+        </section>
+    </Provider>
 ```

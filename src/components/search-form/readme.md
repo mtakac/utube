@@ -1,12 +1,15 @@
 ### SearchForm example
 
 ```js
-    const handleSubmit = (e) => {
+    const { store } = require('../../store');
+    const { Provider } = require('react-redux');
+
+    const onSubmit = (e) => {
         e.preventDefault();
         return alert('Search from submitted!');
     };
 
-    <section>
-        <SearchForm handleSubmit={handleSubmit} />
-    </section>
+    <Provider store={store}>
+        <SearchForm handleSubmit={onSubmit} store={store} />
+    </Provider>
 ```

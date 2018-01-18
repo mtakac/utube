@@ -1,0 +1,15 @@
+@import "../../styles/custom";
+
+.video-panel {
+    .embed-responsive {
+        background-color: $black;
+    }
+
+    .card-body {
+        white-space: pre-line;
+    }
+
+    .ratings {
+        min-width: 100px;
+    }
+}

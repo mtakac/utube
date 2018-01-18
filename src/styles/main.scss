@@ -1,1 +1,9 @@
 @import "custom";
+@import "~nprogress/nprogress";
+
+svg {
+    width: 16px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+}

@@ -15,12 +15,14 @@
         image: 'https://i.ytimg.com/vi/wt8ES0ffy_o/default.jpg'
     }];
 
-    const handleLoadMoreClick = () => alert('Load more button clicked!');
+    const handleLoadMore = () => { };
+    const handleSelectVideo = () => alert('Video selected!');
 
     <section style={{ width: '50%' }}>
         <VideoList
             videos={videos}
-            handleLoadMoreClick={handleLoadMoreClick}
+            handleLoadMore={handleLoadMore}
+            handleSelectVideo={handleSelectVideo}
         />
     </section>
 ```

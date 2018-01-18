@@ -1,9 +1,5 @@
 module.exports = function(env) {
-    let tempEnv = (!env || env === 'development') ? 'dev' : env;
+    env = !env ? 'development' : env; // eslint-disable-line no-param-reassign
 
-    if (tempEnv === 'production') {
-        tempEnv = 'prod';
-    }
-
-    return require(`./webpack.${tempEnv}.js`); // eslint-disable-line global-require, import/no-dynamic-require
+    return require(`./webpack.${env}.js`); // eslint-disable-line global-require, import/no-dynamic-require
 };

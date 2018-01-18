@@ -1,3 +1,4 @@
+import React from 'react';
 import { JSDOM } from 'jsdom';
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
@@ -8,7 +9,7 @@ Enzyme.configure({ adapter: new Adapter() });
 // Don't include non .js files when running tests
 require.extensions['.css'] = () => null;
 require.extensions['.scss'] = () => null;
-require.extensions['.svg'] = () => null;
+require.extensions['.svg'] = () => <svg />;
 
 const dom = new JSDOM('<!doctype html><html><body></body></html>');
 

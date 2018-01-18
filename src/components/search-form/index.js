@@ -1,22 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Field, reduxForm } from 'redux-form';
 
 import IconButton from 'components/icon-button';
-
 import magnifyingGlass from './magnifying-glass.svg';
 
 /**
  * Renders search form.
  */
-const SearchForm = ({ handleSubmit }) => (
+export const SearchForm = ({ handleSubmit }) => (
     <form
         className="d-flex justify-content-between form search-form"
         onSubmit={handleSubmit}
     >
-        <input
+        <Field
             className="mr-1 form-control"
             type="search"
-            placeholder="Search..."
+            name="q"
+            placeholder="Seach Youtube videos..."
+            component="input"
+            value=""
         />
         <IconButton
             type="submit"
@@ -31,4 +34,6 @@ SearchForm.propTypes = {
     handleSubmit: PropTypes.func.isRequired
 };
 
-export default SearchForm;
+export default reduxForm({
+    form: 'search'
+})(SearchForm);

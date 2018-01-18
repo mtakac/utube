@@ -13,6 +13,21 @@
     };
 
     <section>
-        <VideoPanel {...video} />
+        <h6>For logged out user</h6>
+        <VideoPanel
+            video={video}
+            rating="none"
+            handleGetVideoRating={() => { }}
+            handleVideoRating={() => { }}
+        />
+
+        <h6 className="mt-4">For logged in user</h6>
+        <VideoPanel
+            video={video}
+            rating="like"
+            handleGetVideoRating={() => { }}
+            handleVideoRating={() => { }}
+            isLoggedIn
+        />
     </section>
 ```
